@@ -1,0 +1,16 @@
+Submitted At,Name,Harvard Email,Idea,Sketch,Size,Why So Big,Paint Colors,Other Materials,Dates Available,Other Date Notes,Status
+2026-05-09T17:30:00Z,Jane Doe,jdoe@college.harvard.edu,"A small moth on a copper pipe, half-hidden, in gold leaf — a marker for someone I lost.",,1'x1',,"warm gold, ivory, deep umber","gold leaf, sealant",weekend of 5/16 and 5/17,,New
+,,,,,,,,,,,
+# FIELD TYPES (set manually after CSV import in Airtable):
+# Submitted At     → Long text
+# Name             → Long text
+# Harvard Email    → Long text
+# Idea             → Long text
+# Sketch           → Attachment   (the only non-text field)
+# Size             → Long text
+# Why So Big       → Long text
+# Paint Colors     → Long text
+# Other Materials  → Long text
+# Dates Available  → Long text    (multi-select values are joined with "; " by the API)
+# Other Date Notes → Long text
+# Status           → Long text

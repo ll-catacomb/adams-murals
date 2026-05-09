@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { VT323, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const vt323 = VT323({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-vt323",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
-  title: "a project machine",
-  description: "a project machine",
+  title: "ADAMS HOUSE :: SENIOR MURAL PAINTING 2026",
+  description:
+    "The tunnels of Adams House are yours to transform. Submit a mark before you leave.",
 };
 
 export default function RootLayout({
@@ -18,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased`}>
+    <html lang="en">
+      <body className={`${vt323.variable} ${jetbrainsMono.variable} antialiased`}>
         {children}
       </body>
     </html>

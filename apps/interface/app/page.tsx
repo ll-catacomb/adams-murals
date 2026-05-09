@@ -1,48 +1,76 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { StatusBar } from "@/components/mural/status-bar";
+import { VideoHero } from "@/components/mural/video-hero";
+import { MuralForm } from "@/components/mural/form";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8">
-      <div className="mx-auto max-w-2xl">
-        <h1 className="text-4xl font-bold">Your Project</h1>
-        <p className="mt-4 text-muted-foreground">
-          Edit <code className="rounded bg-muted px-1.5 py-0.5 text-sm">app/page.tsx</code> to get started.
-        </p>
+    <div className="min-h-screen bg-bg text-ink relative">
+      {/* soft volumetric fog blobs (decorative, fixed) */}
+      <div
+        className="fog"
+        style={{ top: "10%", left: "-8%", width: 320, height: 320, background: "#ff1500" }}
+      />
+      <div
+        className="fog"
+        style={{ bottom: "20%", right: "-10%", width: 360, height: 360, background: "#050505" }}
+      />
+      <div
+        className="fog"
+        style={{ bottom: "-6%", left: "-8%", width: 420, height: 420, background: "#ff1500" }}
+      />
 
-        <div className="mt-8 flex gap-4">
-          <Button asChild>
-            <Link href="/docs">View Documentation</Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <a
-              href="https://ui.shadcn.com/docs/components"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              shadcn/ui Components
-            </a>
-          </Button>
+      <StatusBar />
+
+      <main className="relative">
+        {/* HERO */}
+        <div className="px-3 sm:px-6 pt-6">
+          <div className="max-w-6xl mx-auto">
+            <VideoHero />
+          </div>
         </div>
 
-        <section className="mt-12 space-y-4">
-          <h2 className="text-2xl font-semibold">Quick Links</h2>
-          <ul className="list-inside list-disc space-y-2 text-muted-foreground">
-            <li>
-              <Link href="/docs" className="text-foreground underline underline-offset-4 hover:text-primary">
-                Documentation
-              </Link>
-              {" "}&mdash; Learn how to use this template
-            </li>
-            <li>
-              <Link href="/docs/getting-started" className="text-foreground underline underline-offset-4 hover:text-primary">
-                Getting Started
-              </Link>
-              {" "}&mdash; Set up your development environment
-            </li>
-          </ul>
-        </section>
-      </div>
-    </main>
+        {/* SEPARATOR / system note */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-20">
+          <div className="flex items-center gap-3">
+            <span className="font-bit text-[12px] tracking-widest text-ink/60">§2</span>
+            <div className="flex-1 h-px bg-ink/30" />
+            <span className="font-bit text-[12px] tracking-widest text-red">
+              SUBMISSION_FORM
+            </span>
+            <div className="flex-1 h-px bg-ink/30" />
+            <span className="font-bit text-[12px] tracking-widest text-ink/60">
+              IO::OPEN
+            </span>
+          </div>
+          <p className="mt-6 max-w-2xl text-[15px] leading-[1.55]">
+            For decades, the Adams House tunnels have been a kind of underworld
+            scrapbook. Some of the most beloved marks down there are the size of a
+            thumbprint. Some sprawl. Some are inside jokes only three roommates will
+            ever understand, which is, frankly, the most magical kind. Tell me yours.
+          </p>
+          <p className="mt-3 font-bit text-[12px] text-ink/60 tabular">
+            ▸ FORM_FIELDS=8  ▸ EST_TIME=4min  ▸ WINDOWS=5/16, 5/23, 5/25
+          </p>
+        </div>
+
+        {/* FORM */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-32">
+          <MuralForm />
+        </div>
+
+        {/* footer */}
+        <footer className="border-t border-ink mt-12 px-4 py-4 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-between items-center gap-3 font-bit text-[11px] tabular text-ink/70">
+            <span>
+              ADAMS_HOUSE / 26_PLYMPTON_ST / CAMBRIDGE_MA / N42.37207° W71.11762°
+            </span>
+            <span>
+              MAINTAINED_BY :: M.WOODS &nbsp;::&nbsp; CONJURED_PAINT :: M.BURKE
+            </span>
+            <span className="text-red">REWILDING_PROTOCOL_v.2026.5</span>
+          </div>
+        </footer>
+      </main>
+    </div>
   );
 }
